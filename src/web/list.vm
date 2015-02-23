@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>WWW-‰‰nestys</title>
+  <body>
+    <form action="/webvote/voter" method="POST">
+      <input type="hidden" name="action" value="vote" />
+      <input type="hidden" name="id" value="$id" />
+      <input type="hidden" name="pw" value="$pw" />
+      <table>
+        <tr><td>Annan ‰‰neni ehdokkaalle numero:</td><td><input type="text" name="vote" /></td></tr>
+        <tr><td><input type="submit" value="ƒ‰nest‰" /></td></tr>
+      </table>
+    </form>
+    <table>
+      <tr><th>Numero</th><th>Nimi</th><th>Vaaliliitto</th></tr>
+#foreach( $candidate in $candidates )
+      <tr><td>$candidate.number</td>
+        <td>$candidate.name</td>
+        <td>$candidate.party</td>
+      </tr>
+#end  
+    </table>
+  </body>
+</html>

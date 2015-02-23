@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE server>
+
+<!-- Generated file - Do not edit! -->
+
+<server>
+   <mbean code="net.sf.hibernate.jmx.HibernateService" name="jboss.jca:service=WebVoter">
+       <depends>jboss.jca:service=RARDeployer</depends>
+       <attribute name="MapResources"></attribute>
+       <attribute name="JndiName">PostgresWebVoterDS</attribute>
+       <attribute name="Datasource">java:/PostgresWebVoterDS</attribute>
+       <attribute name="Dialect">Postgres</attribute>
+       <attribute name="UserName">webvoter</attribute>
+       <attribute name="Password">webvoter</attribute>
+       <attribute name="UseOuterJoin">false</attribute>
+       <attribute name="ShowSql">false</attribute>
+   </mbean>
+
+</server>

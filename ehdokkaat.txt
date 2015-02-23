@@ -1,0 +1,5 @@
+2;Suku1 Nimi1;Ryhma1
+3;Suku2 Nimi2;Ryhma1
+4;Suku3 Nimi3;Ryhma2
+5;Suku4 Nimi4;Ryhma2
+6;Ja Niin;Edelleen

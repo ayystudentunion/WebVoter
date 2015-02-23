@@ -1,0 +1,106 @@
+p.stv {
+	background-color: white;
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+}
+
+a.stv {
+	background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: red;
+}
+
+h2.stv {
+	background-color: white;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20pt;
+}
+
+th.stv {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	background-color: #ddddff;
+	vertical-align: top;
+}
+
+tr.stv, td.stv, td.stv_ {
+	background-color: white;
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+}
+
+.stv_center {
+	background-color: white;
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	text-align: center;
+}
+
+.stv_oikea {
+	background-color: white;
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	text-align: right;
+}
+
+.stv_valittu {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	background-color: #ccffcc;
+}
+
+.stv_pudotettu {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	background-color: #cccccc;
+}
+
+.stv_valittucenter {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	text-align: center;
+	background-color: #ccffcc;
+}
+
+.stv_valittuoikea {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	text-align: right;
+	background-color: #ccffcc;
+}
+
+.stv_pudotettucenter {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	text-align: center;
+	background-color: #cccccc;
+}
+
+.stv_pudotettuoikea {
+	color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+	vertical-align: top;
+	text-align: right;
+	background-color: #cccccc;
+}

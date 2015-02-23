@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<jar path="Z:/tmp/codegen.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/codegen/jar-export.jardesc" exportErrors="true" exportWarnings="true" overwrite="false" saveDescription="true" useSourceFolders="false"/>
+<manifest generateManifest="false" mainClassHandleIdentifier="=codegen/&lt;codegen.ui{GeneratorUI.java[GeneratorUI" manifestLocation="/codegen/Manifest.mf" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=codegen"/>
+</selectedElements>
+</jardesc>

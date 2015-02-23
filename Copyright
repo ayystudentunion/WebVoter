@@ -1,0 +1,12 @@
+Copyright 2003-2005 Kalle Kivimaa <kalle.kivimaa@iki.fi>. This software is
+licensed under GNU Lesser Public License version 2.1. The full license text 
+is included in the file GPL-2.
+
+codegen package copyright 2005 Johannes Heinonen <johannes.heinonen@hut.fi>.
+This software is licensed under GNU Lesser General Public License 
+version 2.1. The full license text is included in file codegen/lesser.txt.
+
+src/web/GetSTVVote.jsp partially by Jarno Elonen <elonen@iki.fi>. Work 
+placed in public domain in 2004.
+
+For other licensing models please contact Kalle Kivimaa.

@@ -1,0 +1,110 @@
+body {
+	background-color: #FFFFFF;
+	background-image: url(../images/bg.gif);
+	margin: 0px;
+}
+.tdBG  { 
+	background-color: #e6ffb9; 
+	background-image: url(../images/bg.gif); 
+	background-position: left top;
+}
+.tdbasicQuestion   { 
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+.tdcontent  { 
+	background-color: #ffffff; 
+	padding-bottom: 1px; 
+	vertical-align: top; 
+	border: solid 1px #999999;
+}
+.tdQcontent1  { 
+	background-color: #d5e0e7;
+	border: solid 1px #c8d6e0;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px; 
+	vertical-align: top; 
+}
+.tdQuestion1  { 
+	background-color: #3F5D71; 
+	padding: 5px; 
+	vertical-align: top; 
+	border: solid 1px #A8BFCF;
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.tableImportanceBox1 {
+	background-color: #B6C9D6;
+	border: solid 1px #ADC3D1;
+}
+.tdQcontent2  { 
+	background-color: #e3ebd1;
+	border: solid 1px #d8d8d8;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px; 
+	vertical-align: top; 
+	vertical-align: top; 
+}
+.tdQuestion2  { 
+	background-color: #668A26;
+	border: solid 1px #C3C8B5; 
+	padding: 5px; 
+	vertical-align: top; 
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.tableImportanceBox2 {
+	background-color: #CCD5B7;
+	border: solid 1px #C3C9B5;
+}
+.tdAnswer {
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom:2px;
+}
+.tdInstructions {
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom:10px;
+}
+.tdInstructionsHeader { 
+	background-color: #3F5D71;
+	border: solid 1px #C3C8B5; 
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom:5px;
+	vertical-align: top; 
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.tdImportanceBox {
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	padding-bottom:1px;
+	vertical-align: top;
+}

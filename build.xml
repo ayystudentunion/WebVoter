@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="WebVoter" default="build" basedir="./">
+
+<property name="xdoclet.basedir" value="xdoclet-1.2.3"/>
+<property name="jboss.net.version" value="4.0"/>
+<path id="project.classpath">
+  <pathelement location="bin"/>
+  <pathelement location="hibernate.jar"/>
+  <pathelement location="j2ee.jar"/>
+  <pathelement location="${xdoclet.basedir}/log4j.jar"/>
+</path>
+<path id="xdoclet.classpath">
+  <path refid="project.classpath"/>
+  <fileset dir="${xdoclet.basedir}">
+    <include name="*.jar"/>
+    <exclude name="xdoclet-module-jboss-net-*.jar"/>
+  </fileset>
+  <fileset dir="${xdoclet.basedir}">
+    <include name="xdoclet-module-jboss-net-${jboss.net.version}*.jar"/>
+  </fileset>
+</path>
+
+<target name="init">
+  <mkdir dir="./bin" />
+  <mkdir dir="./generated" />
+</target>
+
+<target name="clean">
+  <delete dir="./bin" />
+  <delete dir="./generated" />
+</target>
+
+<target name="xdoclet" depends="init">
+  <taskdef name="ejbdoclet" classname="xdoclet.modules.ejb.EjbDocletTask" classpathref="xdoclet.classpath"/><ejbdoclet ejbSpec="2.0"  excludedTags="@version,@author,@todo"  destDir="generated"  verbose="true"  addedTags="@xdoclet-generated at ${TODAY},@copyright The XDoclet Team,@author XDoclet,@version ${version}" >
+    <fileset dir="src"  includes="**/*.java" >
+    </fileset>
+    <packageSubstitution packages="ejb"  substituteWith="interfaces" >
+    </packageSubstitution>
+    <remoteinterface>
+    </remoteinterface>
+    <localinterface>
+    </localinterface>
+    <homeinterface>
+    </homeinterface>
+    <localhomeinterface>
+    </localhomeinterface>
+    <valueobject>
+    </valueobject>
+    <entitypk>
+    </entitypk>
+    <entitycmp>
+    </entitycmp>
+    <session>
+    </session>
+    <utilobject includeGUID="true"  cacheHomes="true" >
+    </utilobject>
+    <deploymentdescriptor validateXML="true"  destDir="bin/META-INF" >
+    </deploymentdescriptor>
+    <jboss Version="3.0"  datasource="java:/PostgresWebVoterDS"  datasourceMapping="PostgreSQL 8.0" >
+    </jboss>
+  </ejbdoclet>
+</target>
+
+<target name="build" depends="xdoclet">
+  <javac destdir="bin" listfiles="yes" source="1.5" target="1.5">
+    <src path="./src" />
+    <src path="./generated" />
+    <classpath refid="project.classpath" />
+  </javac>
+</target>
+
+<target name="jar" depends="build">
+  <jar destfile="webvoter.jar">
+    <zipfileset dir="bin/META-INF" prefix="META-INF">
+      <include name="ejb-jar.xml"/>
+    </zipfileset>
+    <zipfileset dir="generated" prefix="META-INF">
+      <include name="jboss.xml"/>
+    </zipfileset>
+    <zipfileset dir="generated" prefix="META-INF">
+      <include name="jbosscmp-jdbc.xml"/>
+    </zipfileset>
+    <zipfileset dir="bin" includes="**/*.class"/>
+  </jar>
+  <jar destfile="webvoter.war">
+    <zipfileset dir="src/web"/>
+  </jar>
+</target>
+
+<target name="dist" depends="jar">
+  <zip destfile="webvoter.zip">
+    <zipfileset dir=".">
+      <include name="webvoter.jar" />
+      <include name="webvoter.war" />
+      <include name="lib/*" />
+      <include name="README" />
+      <include name="script/*" />
+      <include name="Copyright" />
+      <include name="LGPL-2.1" />
+    </zipfileset>
+    <zipfileset dir="./codegen">
+      <include name="codegen.jar" />
+      <include name="CODEGEN.txt" />
+    </zipfileset>
+    <zipfileset dir="./logparser">
+      <include name="logparser.pl" />
+      <include name="README.txt" />
+      <include name="ehdokkaat.txt" />
+      <include name="webvoter.log" />
+      <include name="html/*" />
+    </zipfileset>
+  </zip>
+  <zip destfile="webvoter-src.zip">
+    <zipfileset prefix="src" dir="src" />
+    <zipfileset prefix="codegen" dir="codegen" />
+    <zipfileset dir=".">
+      <include name="build.xml" />
+      <include name="Copyright" />
+      <include name="script/*" />
+      <include name="lib/*" />
+      <include name="LGPL-2.1" />
+      <include name="hibernate.jar" />
+      <include name="j2ee.jar" />
+      <include name="README" />
+    </zipfileset>
+    <zipfileset dir="./logparser">
+      <include name="logparser.pl" />
+      <include name="README.txt" />
+      <include name="ehdokkaat.txt" />
+      <include name="webvoter.log" />
+      <include name="html/*" />
+    </zipfileset>
+  </zip>
+</target>
+</project>
+
