@@ -12,7 +12,8 @@ and [d'Hondt](http://en.wikipedia.org/wiki/D) result calculation methods).
 The system allows for multiple elections being run simultaneously.
 All elections can have configurable graphical elements.
 
-Read [INSTALL.md](INSTALL.md)
+Read [INSTALL.md](INSTALL.md).
+Also read more instructions in [Finnish](doc/yleista.md).
 
 For shibboleth integration see the `ayy` branch.
 
