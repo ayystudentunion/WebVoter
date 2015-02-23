@@ -47,12 +47,14 @@
 	String languageS;
 	String electionS;
 	String uid;
+	String tempUid;
+	String tempLanguage;
 	String passwd;
-	
+	int parseStudentID;	
 %>
 
 <%
-    uid    = request.getParameter("uid");
+    uid = request.getParameter("uid");
     passwd = request.getParameter("passwd");
     electionS = request.getParameter("election");
     languageS = request.getParameter("language");
@@ -62,7 +64,28 @@
     	electionS = (String) session.getAttribute( "webvoterele" );
     	languageS = (String) session.getAttribute( "webvoterlang" );
     } else {
-	    if( languageS == null || languageS.length() == 0 ) languageS = "en";
+    	if( languageS == null || languageS.length() == 0 ) {
+		tempLanguage = (String)request.getAttribute("A_LANGUAGE");
+		if (tempLanguage == null ) {
+			languageS = "en";
+		} else if( tempLanguage.equals("fi")) {
+			languageS = "fi";
+		} else if( tempLanguage.equals("sv")) {
+			languageS = "sv";
+		} else {
+			languageS = "en";
+		}
+	}
+
+        tempUid  = (String)request.getAttribute("A_STUDENTID");
+	try {
+	        parseStudentID = tempUid.lastIndexOf(":");
+	} catch ( Exception e ) {
+	}
+        try {
+         	uid = (tempUid.substring(parseStudentID+1));
+        } catch( Exception e ) {
+        }
     	session.setAttribute( "webvoteruid", uid );
     	session.setAttribute( "webvoterpwd", passwd );
     	session.setAttribute( "webvoterele", electionS );
@@ -71,9 +94,26 @@
     try {
         person = personHome.findByPrimaryKey(new PersonPK(electionS, uid));
     } catch( Exception e ) {
+if (languageS == null) {
 %>
-<html><title>WebVoter Problem</title><body><h1>Missing user <%= uid %> from the database!</h1></body></html>
+<html><title>WebVoter Problem</title><body><p><b>You are not registered as a voter. If you have registered for attendance and paid the membership fee for the academic year 2011-2012, please contact  Election Secretary Sonja Virta. Email: sonja.virta@ayy.fi, phone: +358 50 520 9421.</b></p></body></html>
 <%
+} else if (languageS.equals("fi")) {
+%>
+<html><title>WebVoter Problem</title><body><p><b>Teitä ei ole rekisteröity äänestäjäksi. Mikäli olet läsnäoleva opiskelija ja olet maksanut jäsenmaksusui lukuvuodelle 2011-2012, ota yhteys vaalien projektisihteeri Sonja Virtaan. Sähköposti: sonja.virta@ayy.fi, puhelin: +358 50 520 9421.</b></p></body></html>
+<%
+} else if (languageS.equals("se")) {
+%>
+<html><title>WebVoter Problem</title><body><p><b>Du har inte registrerats som röstare. Om du är en närvarande studerande och du har betalat medlemsavgiften för läsåret 2011-2012 ta kontakt med valets projektsekreterare Sonja Virta. E-post: sonja.virta@ayy.fi, telefon: +358 50 520 9421.</b></p></body></html>
+<%
+} else {
+%>
+<html><title>WebVoter Problem</title><body><p><b>You are not registered as a voter. If you have registered for attendance and paid the membership fee for the academic year 2011-2012, please contact  Election Secretary Sonja Virta. Email: sonja.virta@ayy.fi, phone: +358 50 520 9421.</b></p></body></html>
+<%
+}
+
+
+	return;
     }
 	election = electionHome.findByPrimaryKey(new ElectionPK(electionS));
 	try {

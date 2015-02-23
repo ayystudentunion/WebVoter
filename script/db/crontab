@@ -1,0 +1,2 @@
+53 9 21 10 * /path/to/scripts/startvoting.sh
+54 9 21 10 * /path/to/scripts/stopvoting.sh
