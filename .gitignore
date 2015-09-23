@@ -1,6 +1,8 @@
 bin/
 generated/
 webvoter.log
+webvoter.jar
+webvoter.war
 
 ### JAVA
 *.class

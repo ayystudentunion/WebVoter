@@ -2,12 +2,13 @@
 
 <project name="WebVoter" default="build" basedir="./">
 
-<property name="xdoclet.basedir" value="xdoclet-1.2.3"/>
-<property name="jboss.net.version" value="4.0"/>
+<property name="lib" value="lib" />
+<property name="xdoclet.basedir" value="${lib}/xdoclet-1.2.3" />
+<property name="jboss.net.version" value="4.0" />
 <path id="project.classpath">
-  <pathelement location="bin"/>
-  <pathelement location="hibernate.jar"/>
-  <pathelement location="j2ee.jar"/>
+  <pathelement location="bin" />
+  <pathelement location="${lib}/hibernate.jar" />
+  <pathelement location="${lib}/j2ee.jar" />
   <pathelement location="${xdoclet.basedir}/log4j.jar"/>
 </path>
 <path id="xdoclet.classpath">
@@ -32,7 +33,8 @@
 </target>
 
 <target name="xdoclet" depends="init">
-  <taskdef name="ejbdoclet" classname="xdoclet.modules.ejb.EjbDocletTask" classpathref="xdoclet.classpath"/><ejbdoclet ejbSpec="2.0"  excludedTags="@version,@author,@todo"  destDir="generated"  verbose="true"  addedTags="@xdoclet-generated at ${TODAY},@copyright The XDoclet Team,@author XDoclet,@version ${version}" >
+  <taskdef name="ejbdoclet" classname="xdoclet.modules.ejb.EjbDocletTask" classpathref="xdoclet.classpath"/>
+  <ejbdoclet ejbSpec="2.0"  excludedTags="@version,@author,@todo"  destDir="generated"  verbose="true"  addedTags="@xdoclet-generated at ${TODAY},@copyright The XDoclet Team,@author XDoclet,@version ${version}" >
     <fileset dir="src"  includes="**/*.java" >
     </fileset>
     <packageSubstitution packages="ejb"  substituteWith="interfaces" >
